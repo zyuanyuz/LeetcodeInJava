@@ -8,7 +8,7 @@ import problems.hard.*;
 
 public class RunMain {
     public static void main(String[] args) {
-        DecodeWays example = new DecodeWays();
+        SubsetsII example = new SubsetsII();
         example.test();
     }
 }
