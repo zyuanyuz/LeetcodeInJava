@@ -8,7 +8,7 @@ import problems.hard.*;
 
 public class RunMain {
     public static void main(String[] args) {
-        SubsetsII example = new SubsetsII();
+        Sqrtx example = new Sqrtx();
         example.test();
     }
 }
