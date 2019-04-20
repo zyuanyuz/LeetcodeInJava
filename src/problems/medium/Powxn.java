@@ -19,8 +19,16 @@ package problems.medium;
  * Explanation: 2^-2 = 1/2^2 = 1/4 = 0.25
  */
 public class Powxn {
-
+    //Time Limit Exceeded
     public double myPow(double x, int n) {
+
+        double result = countResult(x, n);
+        if (result > Double.POSITIVE_INFINITY) return Double.POSITIVE_INFINITY;
+        else if (result < Double.NEGATIVE_INFINITY) return Double.NEGATIVE_INFINITY;
+        else return result;
+    }
+
+    private double countResult(double x, int n) {
         if (n == 0) {
             return 1D;
         }

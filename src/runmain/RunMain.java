@@ -8,7 +8,7 @@ import problems.hard.*;
 
 public class RunMain {
     public static void main(String[] args) {
-        Sqrtx example = new Sqrtx();
+        WordSearch example = new WordSearch();
         example.test();
     }
 }
