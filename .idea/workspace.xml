@@ -2,10 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="02c1c713-ac31-47ca-9acd-6b99272bbd0c" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/problems/medium/Powxn.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/problems/medium/Powxn.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/problems/medium/WordSearch.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/problems/medium/WordSearch.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/runmain/RunMain.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/runmain/RunMain.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/problems/medium/SetMatrixZeroes.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/problems/medium/SetMatrixZeroes.java" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/bin/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -28,20 +25,11 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="false">
+      <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/problems/medium/SetMatrixZeroes.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1674">
-              <caret line="54" column="13" selection-start-line="54" selection-start-column="13" selection-end-line="54" selection-end-column="13" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/problems/medium/WordSearch.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="589">
-              <caret line="55" column="9" lean-forward="true" selection-start-line="55" selection-start-column="9" selection-end-line="55" selection-end-column="9" />
+            <state relative-caret-position="501">
+              <caret line="56" column="22" selection-start-line="56" selection-start-column="22" selection-end-line="56" selection-end-column="22" />
             </state>
           </provider>
         </entry>
@@ -49,7 +37,7 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/runmain/RunMain.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="248">
+            <state relative-caret-position="310">
               <caret line="10" column="43" selection-start-line="10" selection-start-column="43" selection-end-line="10" selection-end-column="43" />
               <folding>
                 <element signature="imports" expanded="true" />
@@ -102,7 +90,6 @@
         <option value="$PROJECT_DIR$/src/problems/easy/PlusOne.java" />
         <option value="$PROJECT_DIR$/src/problems/easy/AddBinary.java" />
         <option value="$PROJECT_DIR$/src/problems/easy/ClimbingStairs.java" />
-        <option value="$PROJECT_DIR$/src/problems/medium/SetMatrixZeroes.java" />
         <option value="$PROJECT_DIR$/src/problems/easy/MaximumSubarray.java" />
         <option value="$PROJECT_DIR$/src/problems/medium/Searcha2DMatrix.java" />
         <option value="$PROJECT_DIR$/src/problems/medium/SortColors.java" />
@@ -138,6 +125,7 @@
         <option value="$PROJECT_DIR$/src/problems/medium/Powxn.java" />
         <option value="$PROJECT_DIR$/src/runmain/RunMain.java" />
         <option value="$PROJECT_DIR$/src/problems/medium/WordSearch.java" />
+        <option value="$PROJECT_DIR$/src/problems/medium/SetMatrixZeroes.java" />
       </list>
     </option>
   </component>
@@ -302,12 +290,12 @@
       <workItem from="1555544350019" duration="584000" />
       <workItem from="1555660472182" duration="691000" />
       <workItem from="1555679770379" duration="4470000" />
-      <workItem from="1555717606643" duration="3042000" />
+      <workItem from="1555717606643" duration="6314000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="322280000" />
+    <option name="totallyTimeSpent" value="325552000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -742,6 +730,13 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/problems/medium/WordSearch.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="93">
+          <caret line="3" column="32" lean-forward="true" selection-start-line="3" selection-start-column="3" selection-end-line="3" selection-end-column="32" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/problems/medium/JumpGame.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="372">
@@ -749,16 +744,9 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/problems/medium/SetMatrixZeroes.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1674">
-          <caret line="54" column="13" selection-start-line="54" selection-start-column="13" selection-end-line="54" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/runmain/RunMain.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="248">
+        <state relative-caret-position="310">
           <caret line="10" column="43" selection-start-line="10" selection-start-column="43" selection-end-line="10" selection-end-column="43" />
           <folding>
             <element signature="imports" expanded="true" />
@@ -766,10 +754,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/problems/medium/WordSearch.java">
+    <entry file="file://$PROJECT_DIR$/src/problems/medium/SetMatrixZeroes.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="589">
-          <caret line="55" column="9" lean-forward="true" selection-start-line="55" selection-start-column="9" selection-end-line="55" selection-end-column="9" />
+        <state relative-caret-position="501">
+          <caret line="56" column="22" selection-start-line="56" selection-start-column="22" selection-end-line="56" selection-end-column="22" />
         </state>
       </provider>
     </entry>
