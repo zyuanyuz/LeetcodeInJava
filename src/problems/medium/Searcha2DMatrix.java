@@ -77,7 +77,6 @@ public class Searcha2DMatrix {
     public void test() {
         //{1, 3, 5, 7}, {10, 11, 16, 20}, {23, 30, 34, 50}
         int[][] matrix = new int[][]{{1, 3, 5, 7}, {10, 11, 16, 20}, {23, 30, 34, 50}};
-        int target = 1;
         System.out.println(searchMatrix(matrix, 16));
         System.out.println(searchMatrix(matrix, 51));
         System.out.println(searchMatrix(matrix, 1));

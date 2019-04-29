@@ -1,11 +1,9 @@
 package problems.medium;
 
 import java.util.List;
-import java.util.Set;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Collections;
-import java.util.HashSet;
 
 /**
  * leetcode 15 Medium
