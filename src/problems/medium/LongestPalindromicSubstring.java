@@ -1,67 +1,45 @@
 package problems.medium;
 
 /**
- * leetcode 5 Medium
+ * leetcode 5 LongestPalindromicSubstring Medium
  * 
  * Given a string s, find the longest palindromic substring in s. You may assume
  * that the maximum length of s is 1000.
  * 
- * Dynamic Programming
+ * Dynamic Programming & Manacher's Algorithm
  */
-/*优化思路：*/
-//Runtime: 100 ms, faster than 23.46% of Java online submissions for Longest Palindromic Substring.
+
 public class LongestPalindromicSubstring {
+	// Runtime: 65 ms, faster than 27.42% of Java online submissions for Longest Palindromic Substring.
+ 	//Memory Usage: 39.4 MB, less than 19.86% of Java online submissions for Longest Palindromic Substring.
+	// Dynamic Programming
 	public String longestPalindrome(String s) {
-		int len = s.length();  				//用len表示字符串的长度
-		int[][] dp=new int[len][len];		//用数组存储自底向上的中间结果
-		for(int i=0;i<len;i++) {//将dp矩阵的对角线上全部设为1，即单个字符是回文子串
-			dp[i][i] = 1;
-		}
-		if(len>=2) {
-			for(int i=0;i<len-1;i++) {
-				if(s.charAt(i)==s.charAt(i+1)) { //检查2位子串是否为回文子串，以1位和2位串为基础
-					dp[i][i+1] = 1;
-				}
-			}
-			for(int sublen=3;sublen<=len;sublen++) {  //对于长度循环，可以堆叠至矩阵角
-				for(int i=0;i<len-sublen+1;i++) {
-					int j = i+sublen-1;
-					if(s.charAt(i)==s.charAt(j)) {
-						dp[i][j] = dp[i+1][j-1];
-					}
-					else {
-						dp[i][j] = 0;
-					}
-				}
+		if (s.length() == 0)
+			return s;
+		boolean[][] isPalindrome = new boolean[s.length()][s.length()];
+		int start = 0, end = 1;
+		for (int length = 1; length <= s.length(); length++) {
+			for (int i = 0; i < s.length() - length + 1; i++) {
+				if (length == 1)
+					isPalindrome[i][i + length - 1] = true;
+				else if (length == 2)
+					isPalindrome[i][i + length - 1] = (s.charAt(i) == s.charAt(i + length - 1));
+				else if (s.charAt(i) == s.charAt(i + length - 1))
+					isPalindrome[i][i + length - 1] = isPalindrome[i + 1][i + length - 2];
+				if (isPalindrome[i][i + length - 1] && length > end - start)
+					end = (start = i) + length;
 			}
 		}
-		
-//		for(int i = 0;i<len;i++) {
-//			for(int j=0;j<len;j++) {
-//				System.out.print(dp[i][j]+" ");
-//			}
-//			System.out.println();
-//		}
-		
-		int start=0,end=len-1;
-		Label:
-		for(int sublen = len;sublen>=1;sublen--) { //在dp矩阵种由长至短寻找最长的回文子串
-			for(int i=0;i<len-sublen+1;i++) {
-				int j = i+sublen-1;
-				if(dp[i][j]==1) {
-					start = i;
-					end = j;
-					break Label;   //寻找到的话即为最大，跳出整个循环
-				}
-			}
-		}
-		
-		String result = s.substring(start,end+1);//不包括尾
-		return result;
+		return s.substring(start, end);
 	}
-	
-	
-	
+
+	//
+	// Manacher's Algorithm
+	public String longestPalindrome1(String s) {
+
+		return null;
+	}
+
 	public void test() {
 		String s = "babad";
 		System.out.println(longestPalindrome(s));
