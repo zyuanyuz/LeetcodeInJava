@@ -1,49 +1,59 @@
 package problems.medium;
 
 /**
- * leetcode 148
+ * leetcode 148 SortList Medium
  * 
  * Sort a linked list in O(n log n) time using constant space complexity.
  */
 public class SortList {
+    //Runtime: 333 ms, faster than 8.46% of Java online submissions for Sort List.
+    //Memory Usage: 40.6 MB, less than 79.22% of Java online submissions for Sort List.
     public ListNode sortList(ListNode head) {
         if (head == null || head.next == null)
             return head;
-        ListNode result = listQuickSort(head);
-        return result;
+        int len = 0;
+        ListNode moveNode = head;
+        while (moveNode != null) { // count the length of the list
+            len++;
+            moveNode = moveNode.next;
+        }
+        listQuickSort(head, len);
+        return head;
     }
 
-    ListNode listQuickSort(ListNode node) {
-        ListNode pivotNode = node;
-        ListNode i = node, j = node, tmp;
-        while (j.next != null) {
-            if (j.next.val < pivotNode.val) {
-                tmp = j.next;
-                j.next = j.next.next;
-                tmp.next = i.next;
-                i.next = tmp;
-                i = tmp;
-                if (i == j)
-                    j = j.next;
-            } else {
+    void listQuickSort(ListNode node, int len) {
+        if (len == 1) {
+            return;
+        } else if (len == 2) {
+            if (node.val > node.next.val) {
+                int tmp = node.val;
+                node.val = node.next.val;
+                node.next.val = tmp;
+            }
+        } else {
+            ListNode pivot = node, i = node, j = node.next;
+            int leftLen = 0, countMove = 0;
+            while (countMove < len - 1 && j != null) {
+                if (j.val < pivot.val) {
+                    leftLen++; // left list will add one
+                    i = i.next;
+                    int tmp = j.val;
+                    j.val = i.val;
+                    i.val = tmp;
+                }
                 j = j.next;
+                countMove++;
+            }
+            if (leftLen > 0) {
+                int tmp = i.val;
+                i.val = pivot.val;
+                pivot.val = tmp;
+                listQuickSort(node, leftLen);
+            }
+            if (len - leftLen > 1) {
+                listQuickSort(i.next, len - leftLen - 1);
             }
         }
-        ListNode leftList = null, rightList = null, linkNode = null;
-        if (i != node) { // left is not null
-            leftList = listQuickSort(node.next);
-        }
-        if (i != j) {// rightList is not null
-            rightList = listQuickSort(i.next);
-        }
-        if (leftList != null) {
-            linkNode = leftList;
-            while (linkNode.next != null) {
-                linkNode = linkNode.next;
-            }
-            // too much case!ugly code!
-        }
-        return null;
     }
 
     public class ListNode {
