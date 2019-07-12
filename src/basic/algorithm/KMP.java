@@ -1,4 +1,4 @@
-package problems.basic;
+package basic.algorithm;
 
 public class KMP{
     

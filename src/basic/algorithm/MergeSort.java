@@ -1,4 +1,4 @@
-package problems.basic;
+package basic.algorithm;
 
 /**
  * Time Complexity:O(nlogn)

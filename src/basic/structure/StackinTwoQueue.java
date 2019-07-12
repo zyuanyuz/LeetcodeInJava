@@ -1,4 +1,4 @@
-package problems.basic.structure;
+package basic.structure;
 
 import java.util.*;
 
