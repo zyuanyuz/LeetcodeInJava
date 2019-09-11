@@ -11,11 +11,16 @@ public class WordBreak {
         
     }
 
-    boolean makeUpStr(String s,int index,List<String> wordDict){
-        if(index==s.length()){
-            return true;
-        }else if(index<s.length()){
-            
-        }
+    boolean isWordBreak(String s,int index,List<String> wordDict){
+        
+    }
+
+    public static void main(String[] args) {
+        WordBreak wBreak = new WordBreak();
+        String s = "cars";
+        List<String> wordDict = Arrays.asList("cars", "ca", "rs");
+        System.out.println(wBreak.wordBreak(s, wordDict));
     }
 }
+//"aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaab"
+//["a","aa","aaa","aaaa","aaaaa","aaaaaa","aaaaaaa","aaaaaaaa","aaaaaaaaa","aaaaaaaaaa"]
