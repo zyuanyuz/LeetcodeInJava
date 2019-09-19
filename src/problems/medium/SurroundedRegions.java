@@ -44,11 +44,11 @@ public class SurroundedRegions {
                 && !isSurrounded(board, isVisited, i, j - 1)) {
             return false;
         }
-        if (i < board.length && board[i + 1][j] == 'O' && isVisited[i + 1][j] == VisitStatus.NO_VISIT
+        if (i < board.length-1 && board[i + 1][j] == 'O' && isVisited[i + 1][j] == VisitStatus.NO_VISIT
                 && !isSurrounded(board, isVisited, i + 1, j)) {
             return false;
         }
-        if (j < board[0].length && board[i][j + 1] == 'O' && isVisited[i][j + 1] == VisitStatus.NO_VISIT
+        if (j < board[0].length-1 && board[i][j + 1] == 'O' && isVisited[i][j + 1] == VisitStatus.NO_VISIT
                 && !isSurrounded(board, isVisited, i, j + 1)) {
             return false;
         }
@@ -65,10 +65,10 @@ public class SurroundedRegions {
         if (j > 0 && board[i][j - 1] == 'O' && isVisited[i][j - 1] != VisitStatus.SETTED) {
             setSurroundedX(board, isVisited, i, j - 1);
         }
-        if (i < board.length && board[i + 1][j] == 'O' && isVisited[i + 1][j] != VisitStatus.SETTED) {
+        if (i < board.length-1 && board[i + 1][j] == 'O' && isVisited[i + 1][j] != VisitStatus.SETTED) {
             setSurroundedX(board, isVisited, i + 1, j);
         }
-        if (j < board[0].length && board[i][j + 1] == 'O' && isVisited[i][j + 1] != VisitStatus.SETTED) {
+        if (j < board[0].length-1 && board[i][j + 1] == 'O' && isVisited[i][j + 1] != VisitStatus.SETTED) {
             setSurroundedX(board, isVisited, i, j + 1);
         }
     }
