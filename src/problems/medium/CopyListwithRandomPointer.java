@@ -1,11 +1,12 @@
 package problems.medium;
 
 /**
- * leetcode 138
+ * leetcode 138 CopyListwithRandomPointer Medium
  */
 
 public class CopyListwithRandomPointer {
-    //
+    //Runtime: 5 ms, faster than 74.48% of Java online submissions for Copy List with Random Pointer.
+    //Memory Usage: 35.9 MB, less than 12.15% of Java online submissions for Copy List with Random Pointer.
     public Node copyRandomList(Node head) {
         Node moveOldNode = head, headOldNode = head;
         Node resultHeadNode = new Node(0, null, null);
