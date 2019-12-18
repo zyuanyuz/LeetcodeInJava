@@ -1,7 +1,8 @@
 package problems.hard;
 
 /**
- * leetcode 23 hard
+ * TODO test
+ * leetcode 23 hard MergekSortedLists
  * 
  * Merge k sorted linked lists and return it as one sorted list. Analyze and
  * describe its complexity.
@@ -14,21 +15,31 @@ package problems.hard;
 public class MergekSortedLists {
 
 	public ListNode mergeKLists(ListNode[] lists) {
-		if(lists.length==0){
+		if (lists.length == 0) {
 			return null;
 		}
-		ListNode resultHead = new ListNode(0);
+		ListNode resultHead = new ListNode(Integer.MIN_VALUE);
 		resultHead.next = lists[0];
-		for(int i=0;i<lists.length;i++){
+		for (int i = 0; i < lists.length; i++) {
 			ListNode moveOne = resultHead;
 			ListNode moveTwo = lists[i];
-			while(moveOne != null){
-				if(moveOne.next.val < moveTwo.val){
-
+			while (moveOne.next != null && moveTwo != null) {
+				if (moveOne.val <= moveTwo.val && moveOne.next.val >= moveTwo.val) {
+					ListNode tmp = moveTwo;
+					moveTwo = moveTwo.next;
+					tmp.next = moveOne.next;
+					moveOne.next = tmp;
+					moveOne = moveOne.next;
+				} else if (moveOne.next.val < moveTwo.val) {
+					moveOne = moveOne.next;
+				} else { // moveOne.val > moveTwo.val
+					//do nothing
 				}
 			}
+			if (moveTwo != null) {
+				moveOne.next = moveTwo;
+			}
 		}
-
 		return resultHead.next;
 	}
 
