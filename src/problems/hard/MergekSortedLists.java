@@ -14,18 +14,22 @@ package problems.hard;
 public class MergekSortedLists {
 
 	public ListNode mergeKLists(ListNode[] lists) {
-		ListNode result;
-		ListNode[] pointnode = new ListNode[lists.length];
-		for (int i = 0; i < lists.length; i++) {
-			pointnode[i] = lists[i];
+		if(lists.length==0){
+			return null;
 		}
-		
+		ListNode resultHead = new ListNode(0);
+		resultHead.next = lists[0];
+		for(int i=0;i<lists.length;i++){
+			ListNode moveOne = resultHead;
+			ListNode moveTwo = lists[i];
+			while(moveOne != null){
+				if(moveOne.next.val < moveTwo.val){
 
-		return null;
-	}
+				}
+			}
+		}
 
-	public void test() {
-
+		return resultHead.next;
 	}
 
 	public class ListNode {
