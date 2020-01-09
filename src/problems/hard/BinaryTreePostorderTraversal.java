@@ -17,7 +17,7 @@ public class BinaryTreePostorderTraversal {
         if (root != null) {
             return new ArrayList<>();
         }
-        List<Integer> list = new ArrayList();
+        List<Integer> list = new ArrayList<>();
         traversalNode(root, list);
         return list;
     }
