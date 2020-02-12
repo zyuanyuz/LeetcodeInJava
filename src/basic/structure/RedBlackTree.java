@@ -1,5 +1,12 @@
 package basic.structure;
 
-public class RedBlackTree extends BinarySearchTree{
+import java.util.Comparator;
+
+public class RedBlackTree<T> extends BinarySearchTree<T> {
+
+    public RedBlackTree(Comparator<T> comparator) {
+        super(comparator);    
+    }
+    
     
 }

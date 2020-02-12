@@ -30,7 +30,7 @@ public class BinarySearchTree<T> implements BinaryTree<T> {
             return;
         }
         BinaryTreeNode<T> traveller = root;
-        while (true) {
+        while (traveller != null) {
             if (comparator.compare(traveller.value, node.value) > 0) {
                 if (traveller.left == null) {
                     traveller.left = node;
@@ -48,9 +48,6 @@ public class BinarySearchTree<T> implements BinaryTree<T> {
     }
 
     public BinaryTreeNode<T> getFirstNode(T value) {
-        if (root == null) {
-            return null;
-        }
         BinaryTreeNode<T> traveller = root;
         while (traveller != null) {
             if (comparator.compare(traveller.value, value) > 0) {
@@ -64,21 +61,68 @@ public class BinarySearchTree<T> implements BinaryTree<T> {
         return null;
     }
 
-    public List<BinaryTreeNode<T>> getAllNodes(T value) {
+    @Override
+    public void deleteValue(T value) {
         if (root == null) {
-            return new ArrayList<>();
+            return;
         }
-        List<BinaryTreeNode<T>> list = new ArrayList<>();
-        BinaryTreeNode<T> traveller = this.getFirstNode(value);
+        if (comparator.compare(root.value, value) == 0) {
+            BinaryTreeNode<T> oldRoot = root;
+            this.root = getMinNodeInNodeRightSubTree(oldRoot);
+            root.right = oldRoot.right;
+
+        }
+        BinaryTreeNode<T> traveller = root;
         while (true) {
-            if (comparator.compare(traveller.value, value) != 0) {
-                break;
-            } else {
-                list.add(traveller);
-                traveller = traveller.right;
+            if (traveller.left == null && traveller.right == null) {
+                return;
             }
+            if (traveller.left != null && comparator.compare(traveller.value, value) > 0) {
+
+            } else if (traveller.right != null) {
+
+            }
+
         }
-        return list;
+
+    }
+
+    public BinaryTreeNode<T> getMinNodeInNodeRightSubTree(BinaryTreeNode<T> node) {
+        if (node == null || node.right == null) {
+            return null;
+        }
+        BinaryTreeNode<T> traveller = node.right, travellerParent = node;
+        while (traveller.left != null) {
+            travellerParent = traveller;
+            traveller = traveller.left;
+        }
+        if (traveller.right != null) {
+            travellerParent.left = traveller.right;
+            traveller.right = null;
+        }
+        return traveller;
+    }
+
+    @Override
+    public List<BinaryTreeNode<T>> preOrderTreeList() {
+        List<BinaryTreeNode<T>> list = new ArrayList<>();
+        BinaryTreeNode<T> traveller = root;
+        while (traveller != null) {
+            
+        }
+        return null;
+    }
+
+    @Override
+    public List<BinaryTreeNode<T>> inOrderTreeList() {
+
+        return null;
+    }
+
+    @Override
+    public List<BinaryTreeNode<T>> postOrdertreeList() {
+
+        return null;
     }
 
 }

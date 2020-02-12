@@ -1,10 +1,20 @@
 package basic.structure;
 
-public interface BinaryTree<T>{
+import java.util.List;
+
+public interface BinaryTree<T> {
     void putValue(T value);
 
     boolean hasValue(T value);
 
+    void deleteValue(T value);
+
+    List<BinaryTreeNode<T>> preOrderTreeList();
+
+    List<BinaryTreeNode<T>> inOrderTreeList();
+
+    List<BinaryTreeNode<T>> postOrdertreeList();
+ 
     public static class BinaryTreeNode<T> {
 
         public BinaryTreeNode<T> left;
@@ -19,6 +29,11 @@ public interface BinaryTree<T>{
             this.left = left;
             this.right = right;
             this.value = value;
+        }
+
+        @Override
+        public String toString(){
+            return this.value==null?null:this.value.toString();
         }
     }
 }

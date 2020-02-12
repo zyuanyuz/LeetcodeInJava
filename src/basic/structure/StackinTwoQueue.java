@@ -8,6 +8,11 @@ import java.util.*;
  * Implementing the stack structure using two queues
  */
 public class StackinTwoQueue<T> extends Stack<T> {
+    /**
+     *
+     */
+    private static final long serialVersionUID = 1L;
+    
     Queue<T> queueOne = new LinkedList<>();
     Queue<T> queueTwo = new LinkedList<>();
     boolean queueSwitch = true;

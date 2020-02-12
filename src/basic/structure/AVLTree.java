@@ -5,12 +5,29 @@ import java.util.Comparator;
 public class AVLTree<T> extends BinarySearchTree<T> {
 
     public AVLTree(Comparator<T> comparator) {
-        super(comparator);    
+        super(comparator);
     }
 
     @Override
-    public void putNode(){
-
+    public void putNode(BinaryTreeNode<T> node) {
+        super.putNode(node);
+        //TODO check balance and fix it
     }
-    
+
+    @Override
+    public void deleteValue(T value) {
+        super.deleteValue(value);
+        //TODO check balance and fix it
+    }
+
+    public static class AVLTreeNode<T> extends BinaryTreeNode<T>{
+        
+        public int height;
+
+        public AVLTreeNode(BinaryTreeNode<T> left, BinaryTreeNode<T> right, T value) {
+            super(left, right, value);
+            
+        }
+        
+    }
 }
