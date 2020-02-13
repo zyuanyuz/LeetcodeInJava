@@ -61,6 +61,7 @@ public class BinarySearchTree<T> implements BinaryTree<T> {
         return null;
     }
 
+    // TODO delete value
     @Override
     public void deleteValue(T value) {
         if (root == null) {
@@ -103,26 +104,80 @@ public class BinarySearchTree<T> implements BinaryTree<T> {
         return traveller;
     }
 
+    /**
+     * Morris
+     */
     @Override
     public List<BinaryTreeNode<T>> preOrderTreeList() {
         List<BinaryTreeNode<T>> list = new ArrayList<>();
-        BinaryTreeNode<T> traveller = root;
-        while (traveller != null) {
-            
+        BinaryTreeNode<T> node = root, prev = null;
+        while (node != null) {
+            list.add(node);
+            if (node.left == null) {
+                node = node.right;
+            } else {
+                prev = node.left;
+                while (prev.right != null && prev.right != node)
+                    prev = prev.right;
+                if (prev.right == null) {
+                    prev.right = node;
+                    node = node.left;
+                } else {
+                    node = node.right;
+                    prev.right = null;
+                }
+            }
         }
-        return null;
+        return list;
     }
 
     @Override
     public List<BinaryTreeNode<T>> inOrderTreeList() {
-
-        return null;
+        List<BinaryTreeNode<T>> list = new ArrayList<>();
+        BinaryTreeNode<T> node = root, prev = null;
+        while (node != null) {
+            if (node.left == null) {
+                list.add(node);
+                node = node.right;
+            } else {
+                prev = node.left;
+                while (prev.right != null && prev.right != node)
+                    prev = prev.right;
+                if (prev.right == null) {
+                    prev.right = node;
+                    node = node.left;
+                } else {
+                    list.add(prev);
+                    prev.right = null;
+                    node = node.right;
+                }
+            }
+        }
+        return list;
     }
 
     @Override
     public List<BinaryTreeNode<T>> postOrdertreeList() {
-
-        return null;
+        List<BinaryTreeNode<T>> list = new ArrayList<>();
+        BinaryTreeNode<T> node = root, prev = null;
+        while (node != null) {
+            if (node.left == null) {
+                node = node.right;
+            } else {
+                prev = node.left;
+                while (prev.right != null && prev.right != node)
+                    prev = prev.right;
+                if (prev.right == null) {
+                    prev.right = node;
+                    node = node.left;
+                } else {
+                    list.add(prev);
+                    prev.right = null;
+                    node = node.right;
+                }
+            }
+        }
+        return list;
     }
 
 }
