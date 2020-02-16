@@ -6,21 +6,21 @@ package basic.algorithm;
 
 public class KMP {
 
-    public static boolean isMatch(String pattern, String str) {
+    public static int isMatch(String pattern, String str) {
         int[] array = KMP.computePrefixFunction(pattern);
         int k = -1;
         for (int i = 0; i < str.length(); i++) {
             while (k >= 0 && pattern.charAt(k + 1) != str.charAt(i)) {
                 k = array[k];
             }
-            if (k >= 0 && pattern.charAt(k + 1) == str.charAt(i)) {
+            if (pattern.charAt(k + 1) == str.charAt(i)) {
                 k++;
             }
             if (k == pattern.length() - 1) {
-                return true;
+                return (i - pattern.length() + 1);
             }
         }
-        return false;
+        return -1;
     }
 
     /**
@@ -47,8 +47,7 @@ public class KMP {
 
     public static void main(String[] args) {
         String pattern = "ababaca";
-        for (int num : computePrefixFunction(pattern)) {
-            System.out.print(num + " ");
-        }
+        String str = "abbcabcbacabda";
+        System.out.println(isMatch(pattern, str));
     }
 }
