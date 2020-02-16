@@ -48,14 +48,14 @@ public class BinarySearchTree<T> implements BinaryTree<T> {
     }
 
     public BinaryTreeNode<T> getFirstNode(T value) {
-        BinaryTreeNode<T> traveller = root;
-        while (traveller != null) {
-            if (comparator.compare(traveller.value, value) > 0) {
-                traveller = traveller.left;
-            } else if (comparator.compare(traveller.value, value) < 0) {
-                traveller = traveller.right;
+        BinaryTreeNode<T> node = root;
+        while (node != null) {
+            if (comparator.compare(node.value, value) > 0) {
+                node = node.left;
+            } else if (comparator.compare(node.value, value) < 0) {
+                node = node.right;
             } else {
-                return traveller;
+                return node;
             }
         }
         return null;
@@ -71,16 +71,13 @@ public class BinarySearchTree<T> implements BinaryTree<T> {
             BinaryTreeNode<T> oldRoot = root;
             this.root = getMinNodeInNodeRightSubTree(oldRoot);
             root.right = oldRoot.right;
-
+            return;
         }
-        BinaryTreeNode<T> traveller = root;
-        while (true) {
-            if (traveller.left == null && traveller.right == null) {
-                return;
-            }
-            if (traveller.left != null && comparator.compare(traveller.value, value) > 0) {
+        BinaryTreeNode<T> node = root, nodeParent = null;
+        while (!(node.left == null && node.right == null)) {
+            if (node.left != null && comparator.compare(node.value, value) > 0) {
 
-            } else if (traveller.right != null) {
+            } else if (node.right != null) {
 
             }
 

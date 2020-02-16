@@ -10,6 +10,9 @@ public class AVLTree<T> extends BinarySearchTree<T> {
 
     @Override
     public void putNode(BinaryTreeNode<T> node) {
+        if(!(node instanceof AVLTreeNode)){
+            return;
+        }
         super.putNode(node);
         //TODO check balance and fix it
     }
@@ -24,9 +27,9 @@ public class AVLTree<T> extends BinarySearchTree<T> {
         
         public int height;
 
-        public AVLTreeNode(BinaryTreeNode<T> left, BinaryTreeNode<T> right, T value) {
+        public AVLTreeNode(BinaryTreeNode<T> left, BinaryTreeNode<T> right, T value,int height) {
             super(left, right, value);
-            
+            this.height = height;
         }
         
     }
