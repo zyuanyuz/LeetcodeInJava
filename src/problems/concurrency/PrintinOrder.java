@@ -11,7 +11,8 @@ public class PrintinOrder {
     // Order.
     // Memory Usage: 35.5 MB, less than 100.00% of Java online submissions for Print
     // in Order.
-    public static class Foo {
+    public static
+    class Foo {
         CountDownLatch oneToTwo;
         CountDownLatch twoToThree;
 
